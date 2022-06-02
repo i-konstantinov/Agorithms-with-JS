@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Algorithm</title>
+</head>
+<body>
+    <!-- Algorithm should go through all smaller nums and multiply them with each other (and with the input num)
+    example: fact(3) => 3 * 2 * 1 = 6 -->
+    <input type="number" id="input" placeholder="Input...">
+    <h1>Factorial: <span id="output"></span></h1>
+    <script>
+        let input = document.getElementById('input');
+        let output = document.getElementById('output');
+        input.addEventListener('input', (ev) => {
+            output.textContent = fact(ev.target.value);
+        });
+
+        function fact(n) {
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+        // O(n)
+        // Best case: 1;
+        // Worst case: very large num;
+    </script>
+</body>
+</html>

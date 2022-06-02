@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primality Test</title>
+</head>
+<body>
+    <!--Alg must do 1 thing: Try dividing number by all smaller nums and return true if 
+    it's only divisible by itself and 1-->
+    <input type="number" id="input" placeholder="Input...">
+    <h1 id="output">Output:</h1>
+    <script>
+        let input = document.getElementById('input');
+        let output = document.getElementById('output');
+        input.addEventListener('input', (ev) => {
+            output.textContent = `Output: ${isPrime(ev.target.value)}`;
+        });
+        function isPrime(n) {
+            if (n < 2) { return false; }
+            // beginning from the square root drastically reduces iterations
+            for (let i = Math.sqrt(n); i > 0; i--) {
+                if (n % i === 0) { return false; }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

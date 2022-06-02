@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Power Of Two</title>
+</head>
+<body>
+    <input type="number" id="input" placeholder="Input...">
+    <h1 id="output">Output:</h1>
+    <script>
+        let input = document.getElementById('input');
+        let output = document.getElementById('output');
+        input.addEventListener('input', (ev) => {
+            output.textContent = `Output: ${isPowerOfTwo(ev.target.value)}`;
+        });
+        function isPowerOfTwo(n) {
+            if (n < 1) { return false }
+            let dividedNum = n;
+            while (dividedNum !== 1) {
+                if (dividedNum % 2 !== 0) { return false }
+                dividedNum /= 2;
+            }
+            return true;
+        }
+        // Best case: number that is not divisible by 2 at all => n = 13 => O(1);
+        // Worst case: large num that can be divided by two a lot of times => 25000 => O(log n);
+        // O(log n) : logarithmic time-complexity function;
+    </script>
+</body>
+</html>
