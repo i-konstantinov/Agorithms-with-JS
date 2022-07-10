@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECURSIVE Factorial Algorithm</title>
+</head>
+<body>
+    <input type="number" id="input" placeholder="Input...">
+    <h1>Factorial: <span id="output"></span></h1>
+    <script>
+        let input = document.getElementById('input');
+        let output = document.getElementById('output');
+        input.addEventListener('input', (ev) => {
+            output.textContent = fact(ev.target.value);
+        });
+
+        function fact(n) {
+            if (n === 1) {
+                return 1;
+            }
+            return n * fact(n - 1);
+        }
+        // On every function call => O(1)
+        // But we trigger multiple function calls => n function calls
+        // T = n * O(1) => O(n)
+        // T = 1 * n = n => O(n)
+    </script>
+</body>
+</html>
